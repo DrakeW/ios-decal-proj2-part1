@@ -17,6 +17,8 @@
 		4196F2DD1E650ECA009916E4 /* ImageFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4196F2DC1E650ECA009916E4 /* ImageFeed.swift */; };
 		4196F2E31E6514EE009916E4 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4196F2E21E6514EE009916E4 /* ImagePickerController.swift */; };
 		4196F2ED1E6609B0009916E4 /* PostNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4196F2EC1E6609B0009916E4 /* PostNavigationController.swift */; };
+		B04011741E78C48400FE9E98 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04011731E78C48400FE9E98 /* SnapViewController.swift */; };
+		B04011781E78CA2B00FE9E98 /* SnapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04011771E78CA2B00FE9E98 /* SnapTableViewCell.swift */; };
 		B0DE686A1E78A5F70045C61C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE68691E78A5F70045C61C /* FeedViewController.swift */; };
 		B0DE686C1E78AF7D0045C61C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DE686B1E78AF7D0045C61C /* FeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		4196F2DC1E650ECA009916E4 /* ImageFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFeed.swift; sourceTree = "<group>"; };
 		4196F2E21E6514EE009916E4 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		4196F2EC1E6609B0009916E4 /* PostNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostNavigationController.swift; sourceTree = "<group>"; };
+		B04011731E78C48400FE9E98 /* SnapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
+		B04011771E78CA2B00FE9E98 /* SnapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapTableViewCell.swift; sourceTree = "<group>"; };
 		B0DE68691E78A5F70045C61C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B0DE686B1E78AF7D0045C61C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,7 @@
 			children = (
 				417986C81E664AE40050E1DF /* imageCollectionVieCell.swift */,
 				B0DE686B1E78AF7D0045C61C /* FeedTableViewCell.swift */,
+				B04011771E78CA2B00FE9E98 /* SnapTableViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 				4196F2EC1E6609B0009916E4 /* PostNavigationController.swift */,
 				417986CE1E6657650050E1DF /* Cells */,
 				4196F2E21E6514EE009916E4 /* ImagePickerController.swift */,
+				B04011731E78C48400FE9E98 /* SnapViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -189,10 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04011741E78C48400FE9E98 /* SnapViewController.swift in Sources */,
 				417986CB1E664CB60050E1DF /* ImageFlowLayout.swift in Sources */,
 				4196F2E31E6514EE009916E4 /* ImagePickerController.swift in Sources */,
 				417986C51E6632C40050E1DF /* TabBarController.swift in Sources */,
 				417986C91E664AE40050E1DF /* imageCollectionVieCell.swift in Sources */,
+				B04011781E78CA2B00FE9E98 /* SnapTableViewCell.swift in Sources */,
 				4196F2DD1E650ECA009916E4 /* ImageFeed.swift in Sources */,
 				4196F2CB1E6509E8009916E4 /* AppDelegate.swift in Sources */,
 				B0DE686A1E78A5F70045C61C /* FeedViewController.swift in Sources */,
