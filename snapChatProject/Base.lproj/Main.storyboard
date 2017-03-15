@@ -59,8 +59,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BzA-nj-h8d">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BzA-nj-h8d">
+                                <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SnapCell" rowHeight="82" id="Evd-Pc-l1G" customClass="SnapTableViewCell" customModule="snapChatProject" customModuleProvider="target">
@@ -98,13 +98,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ay-JX-ClI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="7aG-KT-nQd"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <navigationItem title="Snaptchat 2.0" id="IBK-aa-p35"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="9Ay-JX-ClI" firstAttribute="leading" secondItem="Xwq-lY-Seh" secondAttribute="leadingMargin" constant="-16" id="2fH-rb-GUG"/>
+                            <constraint firstItem="BzA-nj-h8d" firstAttribute="top" secondItem="9Ay-JX-ClI" secondAttribute="top" constant="80" id="6kL-y2-I6C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Ay-JX-ClI" secondAttribute="trailing" constant="-16" id="BBl-1I-X3u"/>
                             <constraint firstItem="BzA-nj-h8d" firstAttribute="width" secondItem="Xwq-lY-Seh" secondAttribute="width" id="LMw-Ip-abc"/>
                             <constraint firstItem="BzA-nj-h8d" firstAttribute="centerY" secondItem="Xwq-lY-Seh" secondAttribute="centerY" id="Uog-0X-hND"/>
+                            <constraint firstItem="9Ay-JX-ClI" firstAttribute="width" secondItem="Xwq-lY-Seh" secondAttribute="width" id="XSi-9x-mcD"/>
                             <constraint firstItem="BzA-nj-h8d" firstAttribute="centerX" secondItem="Xwq-lY-Seh" secondAttribute="centerX" id="YsC-xU-nb8"/>
-                            <constraint firstItem="BzA-nj-h8d" firstAttribute="height" secondItem="Xwq-lY-Seh" secondAttribute="height" id="yfe-h9-2N0"/>
+                            <constraint firstItem="9Ay-JX-ClI" firstAttribute="top" secondItem="5Bh-p7-S89" secondAttribute="bottom" constant="-20" id="o3M-ob-EDR"/>
+                            <constraint firstItem="9Ay-JX-ClI" firstAttribute="centerX" secondItem="Xwq-lY-Seh" secondAttribute="centerX" id="qI5-s1-gRf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="feed" selectedImage="feed" id="gfd-66-3z9"/>
@@ -115,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVp-CP-nW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1012" y="428"/>
+            <point key="canvasLocation" x="-1012" y="427.73613193403304"/>
         </scene>
         <!--Snap Post View Controller-->
         <scene sceneID="V33-AM-Zkr">
