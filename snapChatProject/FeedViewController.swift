@@ -14,12 +14,14 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imageToPost: UIImage?
     var selectedThread: String?
     @IBOutlet weak var postToFeedLabel: UILabel!
+    @IBOutlet weak var postFooterView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         feedTableView.delegate = self
         feedTableView.dataSource = self
+        feedTableView.tableFooterView = postFooterView
         postToFeedLabel.text = "Select a feed to post to"
     }
 
@@ -47,7 +49,8 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func postButtonWasPressed(_ sender: UIButton) {
         if let image = imageToPost {
             if let thread = selectedThread {
-                threads[thread]?.append(image)
+                let snapPost = SnapPost(with: image, from: "Junyu Wang")
+                threads[thread]?.append(snapPost)
                 showAlert(thread)
             }
         }
@@ -59,7 +62,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         alertController.addAction(UIAlertAction(title: "Ok",
                                                 style: UIAlertActionStyle.default,
                                                 handler: {
-                                                    (alert: UIAlertAction!) in
+                                                    (alert) in
                                                     _ = self.navigationController?.popViewController(animated: true)
         }))
         

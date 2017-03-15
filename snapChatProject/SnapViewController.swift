@@ -11,12 +11,17 @@ import UIKit
 class SnapViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var snapTableView: UITableView!
+    var selectedSnapPost: SnapPost?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         snapTableView.delegate = self
         snapTableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.snapTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,23 +45,41 @@ class SnapViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return
+        let thread = threadNames[indexPath.section]
+        if let posts = threads[thread] {
+            selectedSnapPost = posts[indexPath.row]
+            if selectedSnapPost?.readStatus == false {
+                selectedSnapPost?.readStatus = true
+                performSegue(withIdentifier: "SnapToSnapPostViewSegue", sender: self)
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SnapCell", for: indexPath) as! SnapTableViewCell
+        let thread = threadNames[indexPath.section]
+        if let posts = threads[thread] {
+            let post = posts[indexPath.row]
+            cell.readStatusImageView.image = post.readStatus == true ? #imageLiteral(resourceName: "read") : #imageLiteral(resourceName: "unread")
+            cell.userLabel.text = post.postedBy!
+            let interval = Date().timeIntervalSince(post.postedTime!)
+            cell.postedTimeLabel.text = "\(Int(interval / 60)) minutes ago"
+        }
         return cell
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "SnapToSnapPostViewSegue" {
+                if let destination = segue.destination as? SnapPostViewController {
+                    destination.postToView = selectedSnapPost
+                }
+            }
+        }
     }
-    */
 
 }

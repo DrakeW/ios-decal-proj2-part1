@@ -70,21 +70,83 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Evd-Pc-l1G" id="lQu-Tb-4XQ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x3S-EU-LWS">
+                                                    <rect key="frame" x="8" y="18" width="45" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tug-bT-nXm">
+                                                    <rect key="frame" x="74" y="18" width="293" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXV-ud-6x7">
+                                                    <rect key="frame" x="74" y="47" width="293" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postedTimeLabel" destination="bXV-ud-6x7" id="4aR-N5-0cv"/>
+                                            <outlet property="readStatusImageView" destination="x3S-EU-LWS" id="VnY-MQ-EaJ"/>
+                                            <outlet property="userLabel" destination="Tug-bT-nXm" id="KUo-He-M7m"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="feed" id="gfd-66-3z9"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="feed" selectedImage="feed" id="gfd-66-3z9"/>
                     <connections>
                         <outlet property="snapTableView" destination="BzA-nj-h8d" id="Was-bc-caS"/>
+                        <segue destination="5vL-wh-flZ" kind="show" identifier="SnapToSnapPostViewSegue" animates="NO" id="V1o-oJ-Dor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVp-CP-nW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="329.68515742128938"/>
+            <point key="canvasLocation" x="-1012" y="428"/>
+        </scene>
+        <!--Snap Post View Controller-->
+        <scene sceneID="V33-AM-Zkr">
+            <objects>
+                <viewController id="5vL-wh-flZ" customClass="SnapPostViewController" customModule="snapChatProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyY-d7-5Ij"/>
+                        <viewControllerLayoutGuide type="bottom" id="rQN-eb-LqF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uSN-pJ-6Gp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZM-md-YkL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <state key="normal" title="snapPost"/>
+                                <connections>
+                                    <action selector="snapPostButtonWasPressed:" destination="5vL-wh-flZ" eventType="touchUpInside" id="2ql-gD-KHe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EZM-md-YkL" firstAttribute="centerX" secondItem="uSN-pJ-6Gp" secondAttribute="centerX" id="43E-hy-8ZR"/>
+                            <constraint firstItem="EZM-md-YkL" firstAttribute="height" secondItem="uSN-pJ-6Gp" secondAttribute="height" id="QTt-GT-60u"/>
+                            <constraint firstItem="EZM-md-YkL" firstAttribute="width" secondItem="uSN-pJ-6Gp" secondAttribute="width" id="S81-Il-odF"/>
+                            <constraint firstItem="EZM-md-YkL" firstAttribute="centerY" secondItem="uSN-pJ-6Gp" secondAttribute="centerY" id="sJN-JS-g3F"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="snapPostButtonView" destination="EZM-md-YkL" id="aGc-JM-UHE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xeH-sh-tBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58" y="341"/>
         </scene>
         <!--Snapchat 2.0-->
         <scene sceneID="tne-QT-ifu">
@@ -234,6 +296,7 @@
                     </view>
                     <connections>
                         <outlet property="feedTableView" destination="9ki-Lh-KPt" id="WYG-t4-Eny"/>
+                        <outlet property="postFooterView" destination="feB-7W-o9R" id="HW2-K4-d8C"/>
                         <outlet property="postToFeedLabel" destination="Qrm-He-snd" id="sQv-hk-SzH"/>
                     </connections>
                 </viewController>
