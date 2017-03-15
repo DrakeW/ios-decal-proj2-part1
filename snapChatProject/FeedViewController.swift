@@ -48,9 +48,22 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let image = imageToPost {
             if let thread = selectedThread {
                 threads[thread]?.append(image)
+                showAlert(thread)
             }
         }
-        print("posted")
+    }
+    
+    func showAlert(_ threadName: String) {
+        let alertController = UIAlertController(title: "Posted!", message:
+            "Your image has been posted to \(threadName)", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Ok",
+                                                style: UIAlertActionStyle.default,
+                                                handler: {
+                                                    (alert: UIAlertAction!) in
+                                                    _ = self.navigationController?.popViewController(animated: true)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 
     /*
